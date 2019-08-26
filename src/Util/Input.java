@@ -1,6 +1,7 @@
 package Util;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Input {
     static Scanner scanner = new Scanner(System.in);
@@ -9,7 +10,7 @@ public class Input {
      * Returns user input string
      * @return String
      */
-    static String getString(){
+    public static String getString(){
             return scanner.nextLine();
     }
 
@@ -17,7 +18,20 @@ public class Input {
      * Returns user input integer
      * @return int
      */
-    static int getInteger(){
+    public static int getInteger(){
         return scanner.nextInt();
+    }
+
+    /**
+     * Returns a list of integers
+     * @param size
+     * @return
+     */
+    public static List<Integer> getIntArray(int size){
+        List<Integer> arr = new ArrayList<>();
+        for(int i=0;i<size;i++){
+            arr.add(scanner.nextInt());
+        }
+        return arr;
     }
 }
